@@ -8,15 +8,19 @@ import java.time.format.DateTimeFormatter;
 @Table(name = "last_visit")
 public class LastVisit {
     @Id//primary key indicator:  JPA recognizes it as the object’s ID
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//@GeneratedValue indicates that the ID should AUTO INCREMENTED
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//@GeneratedValue indicates that the ID should AUTO INCREMENTED by MySQL DBMS
     private int id;
-    private String in;
-    private String out;
+    private String in; //TODO change to date and format
+    private String out; //"
 
+    //getters and setters
     public int getId() {
         return id;
     }
-    //No setId needed as it is an Auto Generated Column
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getIn() {
         return in;

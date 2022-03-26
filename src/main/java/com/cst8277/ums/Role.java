@@ -6,16 +6,18 @@ import javax.persistence.*;
 @Table(name = "role")
 public class Role {
     @Id //primary key indicator:  JPA recognizes it as the object’s ID
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//@GeneratedValue indicates that the ID should AUTO INCREMENTED
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//@GeneratedValue indicates that the ID should AUTO INCREMENTED by mySQL
     private int id;
     private String name;
     private String description;
 
+    //role toString for front-end
     @Override
     public String toString() {
         return "Role [Id= " + id + ", Name= " + name + ", Description= " + description + "]";
     }
 
+    //getters and setters
     public int getId() {
         return id;
     }

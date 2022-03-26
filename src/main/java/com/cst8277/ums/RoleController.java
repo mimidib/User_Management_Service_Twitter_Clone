@@ -12,12 +12,13 @@ public class RoleController {
     @Autowired
     RoleRepository roleRepository;
 
+    //Get all roles
     @GetMapping("/roles")
     public @ResponseBody Iterable<Role> getAllRoles(){
         return roleRepository.findAll();
     }
 
-/* INSERTING A ROLE IS NOT NEEDED
+/* INSERTING a Role is not needed
     @GetMapping("/insertrole")
     public @ResponseBody String insertRole(@RequestParam String name,
                                            @RequestParam String description){

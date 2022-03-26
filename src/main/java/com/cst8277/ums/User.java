@@ -8,14 +8,22 @@ import java.time.format.DateTimeFormatter;
 @Table(name="user")
 public class User {
     @Id//primary key indicator:  JPA recognizes it as the object’s ID
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //@GeneratedValue indicates that the ID should be AUTO INCREMENTED
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //@GeneratedValue indicates that the ID should be AUTO INCREMENTED by DBMS MySQL
     private int id;
     private String name;
     private String email;
     private String password;
-    private int created;
+    private int created; //TODO fix this to date
     private int last_visit_id;
 
+    //role toString for front-end TODO -> Check if Password should be given for use case
+    @Override
+    public String toString() {
+        return "User [Id= " + id + ", Name= " + name + ", Email = " + email + ", Password = ******" +
+                ", Date Created = " + created + ", Last Visit Id = " + last_visit_id + "]";
+    }
+
+    //getters and setters
     public int getId() {
         return id;
     }
