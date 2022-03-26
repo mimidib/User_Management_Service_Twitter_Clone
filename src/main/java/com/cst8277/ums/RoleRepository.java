@@ -1,0 +1,6 @@
+package com.cst8277.ums;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface RoleRepository extends CrudRepository<Role, Integer> {
+}
